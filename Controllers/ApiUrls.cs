@@ -14,7 +14,7 @@ namespace CattoIMGApi.Controllers
 
             DataTable dt = new DataTable();
 
-            var data = new List<Models.Models>();
+            var data = new List<Models.userData>();
             var con = new MySqlConnection(@"xxxxx");
             
             con.Open();
