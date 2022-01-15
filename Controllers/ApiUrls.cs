@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient; 
 using System.Data;
-
+using CattoIMGApi.Functions;
+    
 namespace CattoIMGApi.Controllers
 {
     [ApiController]
@@ -11,11 +12,12 @@ namespace CattoIMGApi.Controllers
         [Route("/api/getUser/")]
         public ActionResult AllVersions(string username)
         {
+            MySQLData mySQLData = new MySQLData(); // Load CattoIMGApi.Functions.MySQLData Variables      
 
             DataTable dt = new DataTable();
 
             var data = new List<Models.userData>();
-            var con = new MySqlConnection(@"xxxxx");
+            var con = new MySqlConnection(mySQLData.mysqlConnection);
             
             con.Open();
 
