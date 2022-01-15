@@ -10,7 +10,7 @@ namespace CattoIMGApi.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            return Json(new {userData = "/api/getUser?username=user"});
+            return Json(new {userData = "/api/getUser?username=user", version="API Version: osR1.0.0"});
         }
     }
 }
