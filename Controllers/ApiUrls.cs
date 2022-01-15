@@ -21,7 +21,7 @@ namespace CattoIMGApi.Controllers
             
             con.Open();
 
-            using (MySqlCommand cmd = new MySqlCommand("SELECT username, rankId, bio FROM userData WHERE username = @UserName;", con))
+            using (MySqlCommand cmd = new MySqlCommand("SELECT username, rankId FROM userData WHERE username = @UserName;", con))
             {
                 cmd.Parameters.AddWithValue("@UserName", username);
 
@@ -35,7 +35,7 @@ namespace CattoIMGApi.Controllers
                 #pragma warning disable CS8604 
                 var rank = Int32.Parse(row[1].ToString());
 
-                data.Add(new Models.userData { Username = row[0].ToString(), Rank = $"{ranks[rank]}", UserBio = row[2].ToString() });
+                data.Add(new Models.userData { Username = row[0].ToString(), Rank = $"{ranks[rank]}", UserBio = "Feature soon." });
             }
 
             return Json(data);
