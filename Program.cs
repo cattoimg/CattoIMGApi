@@ -17,9 +17,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-app.UseForwardedHeaders(new ForwardedHeadersOptions
-{
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor |
-    ForwardedHeaders.XForwardedProto
-});
