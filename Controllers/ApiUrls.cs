@@ -33,7 +33,7 @@ namespace CattoIMGApi.Controllers
                 #pragma warning disable CS8604 
                 var rank = Int32.Parse(row[1].ToString());
 
-                data.Add(new Models.Models { Username = row[0].ToString(), Rank = $"{ranks[rank]}", UserBio = row[2].ToString() });
+                data.Add(new Models.userData { Username = row[0].ToString(), Rank = $"{ranks[rank]}", UserBio = row[2].ToString() });
             }
 
             return Json(data);
